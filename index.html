@@ -1,99 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Groupe Fonga LLC | SBA 8(a) Government Contracting</title>
-    <meta name="description" content="SBA 8(a) small business providing consulting, IT & AI, and logistics services to government agencies.">
-    <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            margin: 0;
-            color: #1a1a1a;
-            line-height: 1.6;
-        }
-        header {
-            background: linear-gradient(rgba(11,61,145,0.85), rgba(11,61,145,0.85)),
-                        url("https://images.unsplash.com/photo-1521791136064-7986c2920216");
-            background-size: cover;
-            background-position: center;
-            color: #fff;
-            padding: 80px 20px;
-            text-align: center;
-        }
-        nav {
-            background: #f4f4f4;
-            padding: 12px 20px;
-            text-align: center;
-        }
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #0b3d91;
-            font-weight: bold;
-        }
-        section {
-            max-width: 1100px;
-            margin: auto;
-            padding: 50px 20px;
-        }
-        h2, h3 {
-            color: #0b3d91;
-        }
-        .badge {
-            background: #e6f0ff;
-            padding: 15px;
-            border-left: 5px solid #0b3d91;
-            margin-top: 20px;
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
-        }
-        .card {
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            overflow: hidden;
-            background: #fff;
-        }
-        .card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        .card div {
-            padding: 20px;
-        }
-        footer {
-            background: #0b3d91;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-            font-size: 14px;
-        }
-        form input, form textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            font-size: 16px;
-        }
-        form button {
-            background: #0b3d91;
-            color: #fff;
-            padding: 12px 20px;
-            border: none;
-            font-size: 16px;
-            cursor: pointer;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Groupe Fonga LLC | SBA 8(a) Government Contracting</title>
+<meta name="description" content="SBA 8(a) small business providing consulting, IT & AI, and logistics services to government agencies.">
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    color: #1a1a1a;
+    line-height: 1.6;
+}
+header {
+    background: linear-gradient(rgba(11,61,145,0.9), rgba(11,61,145,0.9)),
+    url("https://images.unsplash.com/photo-1521791136064-7986c2920216");
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 70px 20px;
+}
+.header-inner {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.logo {
+    width: 70px;
+}
+nav {
+    background: #f4f4f4;
+    padding: 12px 20px;
+    text-align: center;
+}
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #0b3d91;
+    font-weight: bold;
+}
+section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 60px 20px;
+}
+h2, h3 {
+    color: #0b3d91;
+}
+.badge {
+    background: #e6f0ff;
+    padding: 15px;
+    border-left: 5px solid #0b3d91;
+    margin-top: 20px;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+.card {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: #fff;
+    text-align: center;
+}
+.card i {
+    font-size: 40px;
+    color: #0b3d91;
+    margin-top: 30px;
+}
+.card div {
+    padding: 25px;
+}
+footer {
+    background: #0b3d91;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+}
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 16px;
+}
+form button {
+    background: #0b3d91;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+</style>
 </head>
+
 <body>
 
 <header>
-    <h1>Groupe Fonga LLC</h1>
-    <p>SBA 8(a) Small Business | Consulting | IT & AI | Logistics</p>
+    <div class="header-inner">
+        <!-- Logo -->
+        <svg class="logo" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="46" fill="none" stroke="#ffffff" stroke-width="6"/>
+            <line x1="30" y1="35" x2="70" y2="35" stroke="#ffffff" stroke-width="6"/>
+            <line x1="30" y1="50" x2="70" y2="50" stroke="#ffffff" stroke-width="6"/>
+            <line x1="30" y1="65" x2="70" y2="65" stroke="#ffffff" stroke-width="6"/>
+        </svg>
+        <div>
+            <h1>Groupe Fonga LLC</h1>
+            <p>SBA 8(a) Small Business | Consulting | IT & AI | Logistics</p>
+        </div>
+    </div>
 </header>
 
 <nav>
@@ -111,11 +136,10 @@
         state, and local agencies with consulting, technology modernization,
         and logistics services.
     </p>
-
     <div class="badge">
         <strong>SBA 8(a) Program:</strong> Participant (if applicable)<br>
-        <strong>UEI:</strong> [INSERT UEI]<br>
-        <strong>CAGE Code:</strong> [INSERT CAGE]
+        <strong>UEI:</strong> Available upon request<br>
+        <strong>CAGE Code:</strong> Available upon request
     </div>
 </section>
 
@@ -124,35 +148,26 @@
 
     <div class="grid">
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7" alt="Consulting services">
+            <i class="fa-solid fa-briefcase"></i>
             <div>
                 <h3>Consulting</h3>
-                <p>
-                    Program support, operational analysis, and strategic
-                    advisory services aligned with government requirements.
-                </p>
+                <p>Program support, operational analysis, and strategic advisory aligned with government requirements.</p>
             </div>
         </div>
 
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475" alt="IT and AI services">
+            <i class="fa-solid fa-microchip"></i>
             <div>
                 <h3>IT & Artificial Intelligence</h3>
-                <p>
-                    Secure IT solutions, automation, and AI-enabled systems
-                    supporting data-driven decision-making.
-                </p>
+                <p>Secure IT modernization, automation, and AI-enabled solutions for mission-critical environments.</p>
             </div>
         </div>
 
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d" alt="Logistics services">
+            <i class="fa-solid fa-truck"></i>
             <div>
                 <h3>Logistics</h3>
-                <p>
-                    Supply chain coordination, transportation support,
-                    and mission-critical logistics services.
-                </p>
+                <p>Supply chain coordination, transportation support, and operational logistics services.</p>
             </div>
         </div>
     </div>
@@ -170,10 +185,9 @@
 <section id="teaming">
     <h2>Teaming & Partnerships</h2>
     <p>
-        Groupe Fonga LLC actively pursues teaming relationships with prime
+        Groupe Fonga LLC actively seeks teaming relationships with prime
         contractors and strategic partners supporting government missions.
     </p>
-
     <ul>
         <li>Subcontracting and task order support</li>
         <li>Joint ventures and mentor-protégé arrangements</li>
@@ -183,15 +197,12 @@
 
 <section id="contact">
     <h2>Contact</h2>
-    <p>For contracting opportunities or teaming discussions:</p>
-
     <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="email" name="email" placeholder="Your Email" required>
         <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
         <button type="submit">Send Message</button>
     </form>
-
     <p><strong>Email:</strong> info@groupefonga.com</p>
 </section>
 
@@ -201,3 +212,4 @@
 
 </body>
 </html>
+
