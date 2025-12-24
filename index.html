@@ -6,108 +6,157 @@
 <title>Groupe Fonga LLC | SBA 8(a) Government Contracting</title>
 <meta name="description" content="SBA 8(a) small business providing consulting, IT & AI, and logistics services to government agencies.">
 
-<!-- Icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 <style>
+:root {
+    --primary: #0b3d91;
+    --light: #f4f7fb;
+    --dark: #1a1a1a;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
-    color: #1a1a1a;
+    color: var(--dark);
     line-height: 1.6;
+    background: #fff;
 }
+
+/* HERO */
 header {
-    background: linear-gradient(rgba(11,61,145,0.9), rgba(11,61,145,0.9)),
+    background: linear-gradient(rgba(11,61,145,0.85), rgba(11,61,145,0.85)),
     url("https://images.unsplash.com/photo-1521791136064-7986c2920216");
     background-size: cover;
     background-position: center;
     color: #fff;
-    padding: 70px 20px;
+    padding: 90px 20px;
 }
 .header-inner {
     max-width: 1100px;
     margin: auto;
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 25px;
 }
 .logo {
-    width: 70px;
+    width: 80px;
 }
+
+/* NAV */
 nav {
-    background: #f4f4f4;
-    padding: 12px 20px;
+    background: #ffffff;
+    padding: 14px 20px;
     text-align: center;
+    border-bottom: 1px solid #ddd;
 }
 nav a {
     margin: 0 15px;
     text-decoration: none;
-    color: #0b3d91;
+    color: var(--primary);
     font-weight: bold;
 }
+
+/* SECTIONS */
 section {
     max-width: 1100px;
     margin: auto;
-    padding: 60px 20px;
+    padding: 70px 20px;
 }
-h2, h3 {
-    color: #0b3d91;
+.alt {
+    background: var(--light);
 }
+
+h2 {
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
 .badge {
     background: #e6f0ff;
-    padding: 15px;
-    border-left: 5px solid #0b3d91;
-    margin-top: 20px;
+    padding: 18px;
+    border-left: 5px solid var(--primary);
+    margin-top: 25px;
 }
+
+/* CAPABILITY CARDS */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 35px;
     margin-top: 40px;
 }
+
 .card {
-    border: 1px solid #ddd;
-    border-radius: 6px;
     background: #fff;
-    text-align: center;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.card i {
-    font-size: 40px;
-    color: #0b3d91;
-    margin-top: 30px;
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.15);
 }
-.card div {
+
+.card img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+}
+
+.card-content {
     padding: 25px;
 }
-footer {
-    background: #0b3d91;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-    font-size: 14px;
+
+/* IMAGE */
+.full-image {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
+
+/* CONTACT */
 form input, form textarea {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     margin: 10px 0;
     font-size: 16px;
 }
 form button {
-    background: #0b3d91;
+    background: var(--primary);
     color: #fff;
-    padding: 12px 20px;
+    padding: 14px 24px;
     border: none;
     font-size: 16px;
     cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+    background: var(--primary);
+    color: #fff;
+    text-align: center;
+    padding: 25px;
+    font-size: 14px;
+}
+
+/* SCROLL ANIMATIONS */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 </style>
 </head>
 
 <body>
 
-<header>
+<header class="fade-in">
     <div class="header-inner">
-        <!-- Logo -->
         <svg class="logo" viewBox="0 0 100 100">
             <circle cx="50" cy="50" r="46" fill="none" stroke="#ffffff" stroke-width="6"/>
             <line x1="30" y1="35" x2="70" y2="35" stroke="#ffffff" stroke-width="6"/>
@@ -129,7 +178,7 @@ form button {
     <a href="#contact">Contact</a>
 </nav>
 
-<section id="about">
+<section id="about" class="fade-in">
     <h2>Who We Are</h2>
     <p>
         Groupe Fonga LLC is a SAM-registered small business supporting federal,
@@ -137,43 +186,46 @@ form button {
         and logistics services.
     </p>
     <div class="badge">
-        <strong>SBA 8(a) Program:</strong> Participant (if applicable)<br>
+        <strong>SBA 8(a) Program:</strong> Participant<br>
         <strong>UEI:</strong> Available upon request<br>
         <strong>CAGE Code:</strong> Available upon request
     </div>
 </section>
 
-<section id="capabilities">
+<section id="capabilities" class="alt fade-in">
     <h2>Core Capabilities</h2>
-
     <div class="grid">
-        <div class="card">
-            <i class="fa-solid fa-briefcase"></i>
-            <div>
+        <div class="card fade-in">
+            <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7">
+            <div class="card-content">
                 <h3>Consulting</h3>
-                <p>Program support, operational analysis, and strategic advisory aligned with government requirements.</p>
+                <p>Program support, operational analysis, and strategic advisory aligned with government acquisition requirements.</p>
             </div>
         </div>
 
-        <div class="card">
-            <i class="fa-solid fa-microchip"></i>
-            <div>
+        <div class="card fade-in">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475">
+            <div class="card-content">
                 <h3>IT & Artificial Intelligence</h3>
-                <p>Secure IT modernization, automation, and AI-enabled solutions for mission-critical environments.</p>
+                <p>Secure IT modernization, automation, and AI-enabled systems for mission-critical environments.</p>
             </div>
         </div>
 
-        <div class="card">
-            <i class="fa-solid fa-truck"></i>
-            <div>
+        <div class="card fade-in">
+            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d">
+            <div class="card-content">
                 <h3>Logistics</h3>
-                <p>Supply chain coordination, transportation support, and operational logistics services.</p>
+                <p>Supply chain coordination, transportation management, and operational logistics support.</p>
             </div>
         </div>
     </div>
 </section>
 
-<section id="certifications">
+<section class="fade-in">
+    <img class="full-image fade-in" src="https://images.unsplash.com/photo-1581091215367-59ab6b38f5b3">
+</section>
+
+<section id="certifications" class="fade-in">
     <h2>Certifications & Contracting Status</h2>
     <ul>
         <li>SAM.gov Registered Small Business</li>
@@ -182,11 +234,11 @@ form button {
     </ul>
 </section>
 
-<section id="teaming">
+<section id="teaming" class="alt fade-in">
     <h2>Teaming & Partnerships</h2>
     <p>
-        Groupe Fonga LLC actively seeks teaming relationships with prime
-        contractors and strategic partners supporting government missions.
+        Groupe Fonga LLC actively seeks teaming relationships with prime contractors
+        and strategic partners supporting government missions.
     </p>
     <ul>
         <li>Subcontracting and task order support</li>
@@ -195,7 +247,7 @@ form button {
     </ul>
 </section>
 
-<section id="contact">
+<section id="contact" class="fade-in">
     <h2>Contact</h2>
     <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
         <input type="text" name="name" placeholder="Your Name" required>
@@ -210,6 +262,30 @@ form button {
     © 2025 Groupe Fonga LLC. All rights reserved.
 </footer>
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const faders = document.querySelectorAll(".fade-in");
+
+    const appearOptions = {
+        threshold: 0.15,
+        rootMargin: "0px 0px -50px 0px"
+    };
+
+    const appearOnScroll = new IntersectionObserver(function (entries, observer) {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+        });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+        appearOnScroll.observe(fader);
+    });
+});
+</script>
+
 </body>
 </html>
+
 
