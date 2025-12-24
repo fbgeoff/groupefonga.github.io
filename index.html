@@ -14,202 +14,182 @@
     --dark: #1a1a1a;
 }
 
+/* RESET */
 * { box-sizing: border-box; }
-
 body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, Arial, sans-serif;
     margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, Arial, sans-serif;
     color: var(--dark);
-    line-height: 1.7;
     background: #fff;
+    line-height: 1.6;
 }
 
-/* ---------------- NAV ---------------- */
+/* NAV */
 nav {
     position: sticky;
     top: 0;
-    z-index: 1000;
     background: #fff;
     border-bottom: 1px solid #ddd;
+    z-index: 1000;
 }
-
 .nav-inner {
     max-width: 1100px;
     margin: auto;
-    padding: 14px 20px;
+    padding: 12px 16px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
 }
-
-.nav-links {
-    display: flex;
-    gap: 24px;
-}
-
 nav a {
-    text-decoration: none;
-    color: var(--primary);
+    font-size: 14px;
     font-weight: 600;
-    font-size: 16px;
-}
-
-/* Hamburger */
-.menu-toggle {
-    display: none;
-    font-size: 26px;
-    background: none;
-    border: none;
-    cursor: pointer;
     color: var(--primary);
+    text-decoration: none;
 }
 
-/* ---------------- HERO ---------------- */
+/* HERO */
 header {
     background:
         linear-gradient(rgba(11,61,145,0.85), rgba(11,61,145,0.85)),
-        url("https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1600&q=80");
+        url("https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80");
     background-size: cover;
     background-position: center;
     color: #fff;
-    padding: clamp(70px, 12vw, 120px) 20px;
+    padding: 60px 16px;
 }
-
 .header-inner {
     max-width: 1100px;
     margin: auto;
 }
-
 header h1 {
-    font-size: clamp(28px, 5vw, 44px);
-    margin-bottom: 10px;
+    font-size: 28px;
+    margin: 0 0 10px;
 }
-
 header p {
-    font-size: clamp(16px, 3.5vw, 20px);
-    max-width: 700px;
+    font-size: 16px;
+    margin: 0 0 20px;
+    max-width: 600px;
 }
-
 .hero-cta a {
-    display: inline-block;
-    margin-top: 24px;
+    display: block;
+    text-align: center;
     background: #fff;
     color: var(--primary);
-    padding: 14px 26px;
+    padding: 14px;
+    font-weight: 700;
+    border-radius: 4px;
     text-decoration: none;
-    font-weight: bold;
-    border-radius: 6px;
+    max-width: 260px;
 }
 
-/* ---------------- SECTIONS ---------------- */
+/* SECTIONS */
 section {
     max-width: 1100px;
     margin: auto;
-    padding: clamp(60px, 10vw, 90px) 20px;
+    padding: 50px 16px;
 }
-
-.alt { background: var(--light); }
-
+.alt {
+    background: var(--light);
+}
 h2 {
+    font-size: 24px;
     color: var(--primary);
-    font-size: clamp(24px, 4vw, 32px);
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
-
 .section-intro {
-    max-width: 720px;
-    margin-bottom: 40px;
+    max-width: 700px;
+    margin-bottom: 24px;
 }
 
-/* ---------------- GRID ---------------- */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 32px;
-}
-
-/* ---------------- CARDS ---------------- */
-.card {
-    background: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 10px 28px rgba(0,0,0,0.12);
-}
-
-.card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.card-content {
-    padding: 24px;
-}
-
-/* ---------------- BADGE ---------------- */
+/* BADGE */
 .badge {
     background: #e6f0ff;
-    padding: 20px;
-    border-left: 6px solid var(--primary);
-    border-radius: 6px;
+    padding: 16px;
+    border-left: 4px solid var(--primary);
+    font-size: 15px;
 }
 
-/* ---------------- CONTACT ---------------- */
-form input, form textarea {
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+/* CARDS */
+.card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    overflow: hidden;
+}
+.card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+.card-content {
+    padding: 16px;
+}
+.card-content h3 {
+    margin-top: 0;
+}
+
+/* LISTS */
+ul {
+    padding-left: 18px;
+}
+li {
+    margin-bottom: 8px;
+}
+
+/* CONTACT */
+form input,
+form textarea {
     width: 100%;
     padding: 14px;
-    margin: 12px 0;
+    margin-bottom: 12px;
     font-size: 16px;
-    border-radius: 6px;
     border: 1px solid #ccc;
+    border-radius: 4px;
 }
-
 form button {
+    width: 100%;
+    padding: 16px;
     background: var(--primary);
     color: #fff;
-    padding: 14px 28px;
     border: none;
     font-size: 16px;
-    border-radius: 6px;
-    cursor: pointer;
+    font-weight: 600;
+    border-radius: 4px;
 }
 
-/* ---------------- FOOTER ---------------- */
+/* FOOTER */
 footer {
     background: var(--secondary);
     color: #fff;
     text-align: center;
-    padding: 26px;
-    font-size: 14px;
+    padding: 20px 12px;
+    font-size: 13px;
 }
 
-/* ---------------- ANIMATION ---------------- */
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.7s ease-out;
-}
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
+/* DESKTOP ENHANCEMENTS */
+@media (min-width: 900px) {
 
-/* ---------------- MOBILE ---------------- */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        background: #fff;
-        padding: 16px;
-        border-top: 1px solid #ddd;
+    header {
+        padding: 100px 20px;
     }
 
-    .nav-links.active {
-        display: flex;
+    header h1 {
+        font-size: 40px;
     }
 
-    .menu-toggle {
-        display: block;
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    nav a {
+        font-size: 15px;
     }
 }
 </style>
@@ -219,53 +199,107 @@ footer {
 
 <nav>
     <div class="nav-inner">
-        <strong>Groupe Fonga</strong>
-        <button class="menu-toggle" aria-label="Menu">☰</button>
-        <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#capabilities">Capabilities</a>
-            <a href="#certifications">Certifications</a>
-            <a href="#teaming">Teaming</a>
-            <a href="#contact">Contact</a>
-        </div>
+        <a href="#about">About</a>
+        <a href="#capabilities">Capabilities</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#teaming">Teaming</a>
+        <a href="#contact">Contact</a>
     </div>
 </nav>
 
-<header class="fade-in">
+<header>
     <div class="header-inner">
         <h1>Groupe Fonga LLC</h1>
-        <p>SBA 8(a) small business delivering consulting, IT & AI, and logistics solutions supporting government missions.</p>
+        <p>
+            SBA 8(a) small business delivering consulting, IT & AI,
+            and logistics solutions in support of government missions.
+        </p>
         <div class="hero-cta">
             <a href="#contact">Connect With Us</a>
         </div>
     </div>
 </header>
 
-<!-- (Your remaining sections stay the same; no content changes required) -->
+<section id="about">
+    <h2>Who We Are</h2>
+    <p class="section-intro">
+        Groupe Fonga LLC is a SAM-registered small business providing
+        mission-focused professional services to federal, state,
+        and local government agencies.
+    </p>
+    <div class="badge">
+        <strong>SBA 8(a) Program:</strong> Participant<br>
+        <strong>UEI:</strong> Available upon request<br>
+        <strong>CAGE Code:</strong> Available upon request
+    </div>
+</section>
+
+<section id="capabilities" class="alt">
+    <h2>Core Capabilities</h2>
+
+    <div class="grid">
+        <div class="card">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80" alt="Consulting">
+            <div class="card-content">
+                <h3>Consulting</h3>
+                <p>Program management, operational analysis, and strategic advisory aligned with federal acquisition frameworks.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80" alt="IT and AI">
+            <div class="card-content">
+                <h3>IT & Artificial Intelligence</h3>
+                <p>Secure IT modernization, automation, and AI-enabled systems supporting data-driven decisions.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80" alt="Logistics">
+            <div class="card-content">
+                <h3>Logistics</h3>
+                <p>Supply chain coordination, transportation management, and logistics operations support.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="certifications">
+    <h2>Certifications & Contracting Status</h2>
+    <ul>
+        <li>SAM.gov Registered Small Business</li>
+        <li>SBA 8(a) Business Development Program Participant</li>
+        <li>Eligible for Sole-Source and Competitive Awards</li>
+    </ul>
+</section>
+
+<section id="teaming" class="alt">
+    <h2>Teaming & Partnerships</h2>
+    <p class="section-intro">
+        We actively seek partnerships with prime contractors and
+        strategic collaborators supporting government programs.
+    </p>
+    <ul>
+        <li>Subcontracting and task order support</li>
+        <li>Joint ventures and mentor-protégé arrangements</li>
+        <li>8(a) sole-source and directed award opportunities</li>
+    </ul>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+    <p><strong>Email:</strong> info@groupefonga.com</p>
+</section>
 
 <footer>
     © 2025 Groupe Fonga LLC. All rights reserved.
 </footer>
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    const toggle = document.querySelector(".menu-toggle");
-    const nav = document.querySelector(".nav-links");
-
-    toggle.addEventListener("click", () => {
-        nav.classList.toggle("active");
-    });
-
-    const faders = document.querySelectorAll(".fade-in");
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) entry.target.classList.add("visible");
-        });
-    }, { threshold: 0.15 });
-
-    faders.forEach(el => observer.observe(el));
-});
-</script>
 
 </body>
 </html>
