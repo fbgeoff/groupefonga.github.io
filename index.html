@@ -14,8 +14,8 @@
     --dark: #1a1a1a;
 }
 
-/* RESET */
 * { box-sizing: border-box; }
+
 body {
     margin: 0;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, Arial, sans-serif;
@@ -32,15 +32,35 @@ nav {
     border-bottom: 1px solid #ddd;
     z-index: 1000;
 }
+
 .nav-inner {
     max-width: 1100px;
     margin: auto;
-    padding: 12px 16px;
+    padding: 10px 16px;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
     gap: 16px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    height: 42px;
+    width: auto;
+}
+
+.nav-links {
+    display: flex;
+    gap: 18px;
     flex-wrap: wrap;
 }
-nav a {
+
+.nav-links a {
     font-size: 14px;
     font-weight: 600;
     color: var(--primary);
@@ -57,29 +77,31 @@ header {
     color: #fff;
     padding: 60px 16px;
 }
+
 .header-inner {
     max-width: 1100px;
     margin: auto;
 }
+
 header h1 {
     font-size: 28px;
-    margin: 0 0 10px;
+    margin-bottom: 10px;
 }
+
 header p {
     font-size: 16px;
-    margin: 0 0 20px;
     max-width: 600px;
+    margin-bottom: 20px;
 }
+
 .hero-cta a {
-    display: block;
-    text-align: center;
+    display: inline-block;
     background: #fff;
     color: var(--primary);
-    padding: 14px;
+    padding: 14px 22px;
     font-weight: 700;
     border-radius: 4px;
     text-decoration: none;
-    max-width: 260px;
 }
 
 /* SECTIONS */
@@ -88,14 +110,17 @@ section {
     margin: auto;
     padding: 50px 16px;
 }
+
 .alt {
     background: var(--light);
 }
+
 h2 {
     font-size: 24px;
     color: var(--primary);
     margin-bottom: 16px;
 }
+
 .section-intro {
     max-width: 700px;
     margin-bottom: 24px;
@@ -123,14 +148,17 @@ h2 {
     border-radius: 6px;
     overflow: hidden;
 }
+
 .card img {
     width: 100%;
     height: 160px;
     object-fit: cover;
 }
+
 .card-content {
     padding: 16px;
 }
+
 .card-content h3 {
     margin-top: 0;
 }
@@ -139,6 +167,7 @@ h2 {
 ul {
     padding-left: 18px;
 }
+
 li {
     margin-bottom: 8px;
 }
@@ -153,6 +182,7 @@ form textarea {
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+
 form button {
     width: 100%;
     padding: 16px;
@@ -173,7 +203,7 @@ footer {
     font-size: 13px;
 }
 
-/* DESKTOP ENHANCEMENTS */
+/* DESKTOP */
 @media (min-width: 900px) {
 
     header {
@@ -188,8 +218,8 @@ footer {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    nav a {
-        font-size: 15px;
+    .logo img {
+        height: 48px;
     }
 }
 </style>
@@ -199,11 +229,16 @@ footer {
 
 <nav>
     <div class="nav-inner">
-        <a href="#about">About</a>
-        <a href="#capabilities">Capabilities</a>
-        <a href="#certifications">Certifications</a>
-        <a href="#teaming">Teaming</a>
-        <a href="#contact">Contact</a>
+        <div class="logo">
+            <img src="logo.png" alt="Groupe Fonga LLC Logo">
+        </div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#capabilities">Capabilities</a>
+            <a href="#certifications">Certifications</a>
+            <a href="#teaming">Teaming</a>
+            <a href="#contact">Contact</a>
+        </div>
     </div>
 </nav>
 
@@ -288,7 +323,7 @@ footer {
 
 <section id="contact">
     <h2>Contact</h2>
-    <form action="https://formspree.io/f/mqezojav" method="POST">
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="email" name="email" placeholder="Your Email" required>
         <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
@@ -303,4 +338,6 @@ footer {
 
 </body>
 </html>
+
+
 
