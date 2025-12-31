@@ -1,472 +1,156 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Groupe Fonga LLC | SBA 8(a) Government Contracting</title>
-<meta name="description" content="SBA 8(a) small business providing consulting, IT & AI, and logistics services to government agencies.">
-
-<style>
-:root {
-    --primary: #0b3d91;
-    --secondary: #0a2c66;
-    --light: #f4f7fb;
-    --dark: #1a1a1a;
-}
-
-/* RESET */
-* { box-sizing: border-box; }
-body {
-    margin: 0;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, Arial, sans-serif;
-    color: var(--dark);
-    background: #fff;
-    line-height: 1.6;
-}
-
-/* NAV */
-nav {
-    position: sticky;
+<body>
+<div id="comingSoonOverlay" style="
+    position: fixed;
     top: 0;
-    background: #fff;
-    border-bottom: 1px solid #ddd;
-    z-index: 1000;
-}
-.nav-inner {
-    max-width: 1100px;
-    margin: auto;
-    padding: 12px 16px;
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-}
-nav a {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--primary);
-    text-decoration: none;
-}
-
-/* HERO */
-header {
-    background:
-        linear-gradient(rgba(11,61,145,0.85), rgba(11,61,145,0.85)),
-        url("https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80");
-    background-size: cover;
-    background-position: center;
-    color: #fff;
-    padding: 60px 16px;
-}
-.header-inner {
-    max-width: 1100px;
-    margin: auto;
-}
-header h1 {
-    font-size: 28px;
-    margin: 0 0 10px;
-}
-header p {
-    font-size: 16px;
-    margin: 0 0 20px;
-    max-width: 600px;
-}
-.hero-cta a {
-    display: block;
-    text-align: center;
-    background: #fff;
-    color: var(--primary);
-    padding: 14px;
-    font-weight: 700;
-    border-radius: 4px;
-    text-decoration: none;
-    max-width: 260px;
-}
-
-/* SECTIONS */
-section {
-    max-width: 1100px;
-    margin: auto;
-    padding: 50px 16px;
-}
-.alt {
-    background: var(--light);
-}
-h2 {
-    font-size: 24px;
-    color: var(--primary);
-    margin-bottom: 16px;
-}
-.section-intro {
-    max-width: 700px;
-    margin-bottom: 24px;
-}
-
-/* BADGE */
-.badge {
-    background: #e6f0ff;
-    padding: 16px;
-    border-left: 4px solid var(--primary);
-    font-size: 15px;
-}
-
-/* GRID */
-.grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 24px;
-}
-
-/* CARDS */
-.card {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    overflow: hidden;
-}
-.card img {
+    left: 0;
     width: 100%;
-    height: 160px;
-    object-fit: cover;
-}
-.card-content {
-    padding: 16px;
-}
-.card-content h3 {
-    margin-top: 0;
-}
-
-/* LISTS */
-ul {
-    padding-left: 18px;
-}
-li {
-    margin-bottom: 8px;
-}
-
-/* ========== UPDATED: CAPABILITY STATEMENT DOWNLOAD SECTION ========== */
-/* CONTACT */
-.download-capability {
-    background: linear-gradient(135deg, #0b3d91 0%, #0a2c66 100%);
-    color: #fff;
-    padding: 32px;
-    border-radius: 8px;
-    text-align: center;
-    margin-bottom: 40px;
-}
-.download-capability h3 {
-    margin: 0 0 12px;
-    font-size: 22px;
-}
-.download-capability p {
-    margin: 0 0 20px;
-    font-size: 15px;
-    opacity: 0.95;
-}
-.download-btn {
-    display: inline-block;
-    background: #fff;
-    color: var(--primary);
-    padding: 14px 32px;
-    font-weight: 700;
-    border-radius: 4px;
-    text-decoration: none;
-    font-size: 16px;
-    transition: transform 0.2s;
-}
-.download-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
-/* ========== END OF CAPABILITY STATEMENT STYLES ========== */
-
-.contact-info {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 16px;
-    margin-bottom: 32px;
-}
-.contact-card {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    padding: 20px;
+    height: 100%;
+    z-index: 99999;
+    background: linear-gradient(135deg, #0b3d91 0%, #1e5bb8 50%, #0a2c66 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
     display: flex;
     align-items: center;
-    gap: 16px;
-}
-.contact-icon {
-    font-size: 28px;
-    color: var(--primary);
-    min-width: 40px;
-    text-align: center;
-}
-.contact-details h3 {
-    margin: 0 0 4px;
-    font-size: 14px;
-    color: #666;
-    font-weight: 500;
-    text-transform: uppercase;
-}
-.contact-details a {
-    color: var(--primary);
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: 600;
-}
-.contact-details a:hover {
-    text-decoration: underline;
-}
-.contact-details p {
-    margin: 0;
-    font-size: 18px;
-    font-weight: 600;
-    color: var(--dark);
-}
-
-form input,
-form textarea {
-    width: 100%;
-    padding: 14px;
-    margin-bottom: 12px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-form button {
-    width: 100%;
-    padding: 16px;
-    background: var(--primary);
-    color: #fff;
-    border: none;
-    font-size: 16px;
-    font-weight: 600;
-    border-radius: 4px;
-    cursor: pointer;
-}
-form button:hover {
-    background: var(--secondary);
-}
-
-/* FOOTER */
-footer {
-    background: var(--secondary);
-    color: #fff;
-    padding: 32px 20px 20px;
-}
-.footer-content {
-    max-width: 1100px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 24px;
-    margin-bottom: 24px;
-}
-.footer-contact {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-.footer-contact a {
-    color: #fff;
-    text-decoration: none;
-}
-.footer-contact a:hover {
-    text-decoration: underline;
-}
-.footer-bottom {
-    max-width: 1100px;
-    margin: auto;
-    text-align: center;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255,255,255,0.2);
-    font-size: 13px;
-}
-
-/* DESKTOP ENHANCEMENTS */
-@media (min-width: 900px) {
-
-    header {
-        padding: 100px 20px;
-    }
-
-    header h1 {
-        font-size: 40px;
-    }
-
-    .grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .contact-info {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .footer-content {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    nav a {
-        font-size: 15px;
-    }
-}
-</style>
-</head>
-
-<body>
-
-<nav>
-    <div class="nav-inner">
-        <a href="#about">About</a>
-        <a href="#capabilities">Capabilities</a>
-        <a href="#certifications">Certifications</a>
-        <a href="#teaming">Teaming</a>
-        <a href="#contact">Contact</a>
-    </div>
-</nav>
-
-<header>
-    <div class="header-inner">
-        <h1>Groupe Fonga LLC</h1>
-        <p>
-            SBA 8(a) small business delivering consulting, IT & AI,
-            and logistics solutions in support of government missions.
-        </p>
-        <div class="hero-cta">
-            <a href="#contact">Connect With Us</a>
-        </div>
-    </div>
-</header>
-
-<section id="about">
-    <h2>Who We Are</h2>
-    <p class="section-intro">
-        Groupe Fonga LLC is a SAM-registered small business providing
-        mission-focused professional services to federal, state,
-        and local government agencies.
-    </p>
-    <div class="badge">
-        <strong>SBA 8(a) Program:</strong> Participant<br>
-        <strong>UEI:</strong> Available upon request<br>
-        <strong>CAGE Code:</strong> Available upon request
-    </div>
-</section>
-
-<section id="capabilities" class="alt">
-    <h2>Core Capabilities</h2>
-
-    <div class="grid">
-        <div class="card">
-            <img loading="lazy" src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80" alt="Consulting">
-            <div class="card-content">
-                <h3>Consulting</h3>
-                <p>Program management, operational analysis, and strategic advisory aligned with federal acquisition frameworks.</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <img loading="lazy" src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80" alt="IT and AI">
-            <div class="card-content">
-                <h3>IT & Artificial Intelligence</h3>
-                <p>Secure IT modernization, automation, and AI-enabled systems supporting data-driven decisions.</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <img loading="lazy" src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80" alt="Logistics">
-            <div class="card-content">
-                <h3>Logistics</h3>
-                <p>Supply chain coordination, transportation management, and logistics operations support.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="certifications">
-    <h2>Certifications & Contracting Status</h2>
-    <ul>
-        <li>SAM.gov Registered Small Business</li>
-        <li>SBA 8(a) Business Development Program Participant</li>
-        <li>Eligible for Sole-Source and Competitive Awards</li>
-    </ul>
-</section>
-
-<section id="teaming" class="alt">
-    <h2>Teaming & Partnerships</h2>
-    <p class="section-intro">
-        We actively seek partnerships with prime contractors and
-        strategic collaborators supporting government programs.
-    </p>
-    <ul>
-        <li>Subcontracting and task order support</li>
-        <li>Joint ventures and mentor-protégé arrangements</li>
-        <li>8(a) sole-source and directed award opportunities</li>
-    </ul>
-</section>
-
-<!-- ========== UPDATED: CONTACT SECTION WITH CAPABILITY STATEMENT ========== -->
-<section id="contact">
-    <h2>Contact</h2>
+    justify-content: center;
+    overflow: hidden;
+">
+    <style>
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -30px) rotate(120deg); }
+            66% { transform: translate(-20px, 20px) rotate(240deg); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+        }
+        @keyframes shimmer {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+        .cs-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .cs-shape {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            animation: float 20s infinite ease-in-out;
+        }
+        .cs-shape:nth-child(1) {
+            width: 300px;
+            height: 300px;
+            top: -150px;
+            left: -150px;
+            animation-delay: 0s;
+        }
+        .cs-shape:nth-child(2) {
+            width: 200px;
+            height: 200px;
+            bottom: -100px;
+            right: -100px;
+            animation-delay: 5s;
+        }
+        .cs-shape:nth-child(3) {
+            width: 150px;
+            height: 150px;
+            top: 50%;
+            right: 10%;
+            animation-delay: 10s;
+        }
+        .cs-container {
+            max-width: 600px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            animation: fadeIn 1.2s ease-in;
+            color: #fff;
+            padding: 20px;
+        }
+        .cs-logo {
+            font-size: 52px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: -2px;
+            animation: pulse 3s ease-in-out infinite;
+        }
+        .cs-coming-soon {
+            font-size: 64px;
+            font-weight: 800;
+            margin: 40px 0 20px;
+            letter-spacing: -2px;
+            background: linear-gradient(45deg, #fff, #a8d5ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+        .cs-tagline {
+            font-size: 20px;
+            margin-bottom: 50px;
+            opacity: 0.95;
+        }
+        .cs-contact-mini {
+            display: inline-flex;
+            gap: 24px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50px;
+            padding: 16px 32px;
+            margin-top: 20px;
+        }
+        .cs-contact-mini a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 28px;
+            transition: transform 0.3s ease;
+            display: inline-block;
+        }
+        .cs-contact-mini a:hover {
+            transform: scale(1.2) rotate(10deg);
+        }
+        @media (max-width: 600px) {
+            .cs-logo { font-size: 36px; }
+            .cs-coming-soon { font-size: 42px; }
+            .cs-tagline { font-size: 16px; }
+            .cs-contact-mini { gap: 16px; padding: 12px 24px; }
+            .cs-contact-mini a { font-size: 24px; }
+        }
+    </style>
     
-    <!-- NEW: Capability Statement Download Box -->
-    <div class="download-capability">
-        <h3>📄 Capability Statement</h3>
-        <p>Download our one-page capability statement with complete company information, NAICS codes, and core competencies.</p>
-        <a href="capability-statement.pdf" class="download-btn" download>Download PDF</a>
+    <div class="cs-shapes">
+        <div class="cs-shape"></div>
+        <div class="cs-shape"></div>
+        <div class="cs-shape"></div>
     </div>
     
-    <!-- RESTORED: Contact Cards -->
-    <div class="contact-info">
-        <div class="contact-card">
-            <div class="contact-icon">📧</div>
-            <div class="contact-details">
-                <h3>Email</h3>
-                <a href="mailto:info@groupefonga.com">info@groupefonga.com</a>
-            </div>
-        </div>
-        
-        <div class="contact-card">
-            <div class="contact-icon">📞</div>
-            <div class="contact-details">
-                <h3>Phone</h3>
-                <a href="tel:+15127615585">(512) 761-5585</a>
-            </div>
-        </div>
-        
-        <div class="contact-card">
-            <div class="contact-icon">📍</div>
-            <div class="contact-details">
-                <h3>Location</h3>
-                <p>Austin, Texas</p>
-            </div>
+    <div class="cs-container">
+        <div class="cs-logo">Groupe Fonga LLC</div>
+        <div class="cs-coming-soon">Coming Soon</div>
+        <p class="cs-tagline">Something great is in the works</p>
+        <div class="cs-contact-mini">
+            <a href="mailto:info@groupefonga.com" title="Email us">📧</a>
+            <a href="tel:+15127615585" title="Call us">📞</a>
         </div>
     </div>
+</div>
 
-    <h3 style="margin-bottom: 12px;">Send Us a Message</h3>
-    <form action="https://formspree.io/f/mqezojav" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-    </form>
-</section>
-<!-- ========== END OF UPDATED CONTACT SECTION ========== -->
 
-<footer>
-    <div class="footer-content">
-        <div class="footer-contact">
-            <strong>Contact Information</strong>
-            <a href="mailto:info@groupefonga.com">📧 info@groupefonga.com</a>
-            <a href="tel:+15127615585">📞 (512) 761-5585</a>
-            <span>📍 Austin, Texas</span>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        © 2025 Groupe Fonga LLC. All rights reserved.
-    </div>
-</footer>
-
-</body>
-</html>
 
 
 
