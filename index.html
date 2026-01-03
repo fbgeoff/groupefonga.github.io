@@ -3,351 +3,1057 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Groupe Fonga LLC | Coming Soon</title>
-<meta name="description" content="SBA 8(a) small business - Coming Soon">
+<title>Groupe Fonga LLC | SBA 8(a) Government Contracting</title>
+<meta name="description" content="SBA 8(a) small business providing consulting, IT & AI, and logistics services to government agencies.">
 
 <style>
+:root {
+    --primary: #0b3d91;
+    --secondary: #0a2c66;
+    --accent: #2563eb;
+    --light: #f8fafc;
+    --dark: #1e293b;
+    --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gradient-2: linear-gradient(135deg, #0b3d91 0%, #1e40af 100%);
+}
+
+/* RESET */
 * { 
-    box-sizing: border-box; 
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, Arial, sans-serif;
-    background: #0a1128;
-    color: #fff;
-    min-height: 100vh;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+    color: var(--dark);
+    background: #fff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* NAVIGATION */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(11, 61, 145, 0.1);
+    z-index: 1000;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+nav.scrolled {
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    background: rgba(255, 255, 255, 0.98);
+}
+
+.nav-inner {
+    max-width: 1280px;
+    margin: auto;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    width: 52px;
+    height: 52px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
-    overflow: hidden;
+    background: linear-gradient(135deg, #0b3d91 0%, #1e40af 50%, #dc143c 100%);
+    border-radius: 50%;
     position: relative;
+    overflow: visible;
+    box-shadow: 0 4px 12px rgba(11, 61, 145, 0.3);
+    border: 3px solid white;
 }
 
-/* Animated Grid Background */
-.grid-background {
-    position: fixed;
+.eagle-shield {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shield-bg {
+    position: absolute;
+    width: 32px;
+    height: 36px;
+    background: linear-gradient(180deg, #dc143c 0%, #dc143c 35%, white 35%, white 50%, #dc143c 50%, #dc143c 65%, white 65%, white 80%, #dc143c 80%);
+    clip-path: polygon(50% 0%, 100% 0%, 100% 70%, 50% 100%, 0% 70%, 0% 0%);
+    border: 1px solid rgba(11, 61, 145, 0.3);
+}
+
+.shield-blue {
+    position: absolute;
+    width: 32px;
+    height: 14px;
+    background: #0b3d91;
+    top: 8px;
+    clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%, 0% 100%, 0% 0%);
+}
+
+.eagle-symbol {
+    position: relative;
+    z-index: 2;
+    font-size: 20px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.stars-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 9px;
+}
+
+.mini-stars {
+    display: flex;
+    gap: 2px;
+    font-size: 6px;
+    color: white;
+    z-index: 1;
+}
+
+.nav-logo {
+    font-size: 22px;
+    font-weight: 800;
+    background: var(--gradient-2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.5px;
+    transition: transform 0.3s ease;
+}
+
+.nav-logo:hover {
+    transform: scale(1.05);
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+
+.nav-links a {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--dark);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 4px 0;
+}
+
+.nav-links a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background: var(--gradient-2);
+    border-radius: 2px;
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+.nav-links a:hover::before {
+    width: 100%;
+}
+
+/* HERO SECTION */
+header {
+    position: relative;
+    background: #0a0e27;
+    color: #fff;
+    padding: 180px 24px 120px;
+    overflow: hidden;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    border-bottom: 4px solid #dc143c;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        linear-gradient(135deg, rgba(11,61,145,0.97), rgba(30,64,175,0.95)),
+        url("https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1600&q=80");
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-overlay {
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: 
-        linear-gradient(90deg, rgba(11, 61, 145, 0.1) 1px, transparent 1px),
-        linear-gradient(rgba(11, 61, 145, 0.1) 1px, transparent 1px);
-    background-size: 50px 50px;
-    animation: gridMove 20s linear infinite;
-    z-index: 0;
+        linear-gradient(to bottom, transparent 0%, rgba(11, 61, 145, 0.1) 100%),
+        radial-gradient(ellipse at 30% 40%, rgba(220, 20, 60, 0.12) 0%, transparent 60%),
+        radial-gradient(ellipse at 70% 60%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
 }
 
-@keyframes gridMove {
-    0% { transform: translate(0, 0); }
-    100% { transform: translate(50px, 50px); }
-}
-
-/* Floating Particles */
-.particles {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
+.hero-particles {
+    display: none;
 }
 
 .particle {
-    position: absolute;
-    background: radial-gradient(circle, rgba(168, 213, 255, 0.8), transparent);
-    border-radius: 50%;
-    animation: particleFloat 15s infinite ease-in-out;
+    display: none;
 }
 
-.particle:nth-child(1) {
-    width: 4px;
-    height: 4px;
-    top: 20%;
-    left: 10%;
-    animation-delay: 0s;
-    animation-duration: 12s;
-}
-
-.particle:nth-child(2) {
-    width: 6px;
-    height: 6px;
-    top: 60%;
-    left: 80%;
-    animation-delay: 3s;
-    animation-duration: 18s;
-}
-
-.particle:nth-child(3) {
-    width: 3px;
-    height: 3px;
-    top: 40%;
-    left: 30%;
-    animation-delay: 6s;
-    animation-duration: 15s;
-}
-
-.particle:nth-child(4) {
-    width: 5px;
-    height: 5px;
-    top: 80%;
-    left: 60%;
-    animation-delay: 2s;
-    animation-duration: 14s;
-}
-
-.particle:nth-child(5) {
-    width: 4px;
-    height: 4px;
-    top: 15%;
-    left: 70%;
-    animation-delay: 8s;
-    animation-duration: 16s;
-}
-
-@keyframes particleFloat {
-    0%, 100% { transform: translate(0, 0) scale(1); opacity: 0; }
-    10% { opacity: 1; }
-    90% { opacity: 1; }
-    50% { transform: translate(100px, -100px) scale(1.5); }
-}
-
-/* Glowing Orbs */
-.orb {
-    position: fixed;
-    border-radius: 50%;
-    filter: blur(60px);
-    opacity: 0.3;
-    animation: orbFloat 20s infinite ease-in-out;
-}
-
-.orb1 {
-    width: 400px;
-    height: 400px;
-    background: #0b3d91;
-    top: -200px;
-    left: -200px;
-    animation-delay: 0s;
-}
-
-.orb2 {
-    width: 300px;
-    height: 300px;
-    background: #1e5bb8;
-    bottom: -150px;
-    right: -150px;
-    animation-delay: 5s;
-}
-
-.orb3 {
-    width: 250px;
-    height: 250px;
-    background: #0a2c66;
-    top: 50%;
-    left: 50%;
-    animation-delay: 10s;
-}
-
-@keyframes orbFloat {
-    0%, 100% { transform: translate(0, 0); }
-    33% { transform: translate(50px, -50px); }
-    66% { transform: translate(-30px, 30px); }
-}
-
-/* Main Content */
-.container {
-    max-width: 700px;
-    text-align: center;
+.header-inner {
+    max-width: 1280px;
+    margin: auto;
     position: relative;
-    z-index: 10;
-    animation: fadeInUp 1.5s ease-out;
+    z-index: 2;
+}
+
+.header-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 32px;
+    text-transform: uppercase;
+    animation: fadeInUp 0.8s ease;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 64px;
+    margin: 0 0 24px;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+header p {
+    font-size: 22px;
+    margin: 0 0 40px;
+    max-width: 700px;
+    opacity: 0.95;
+    line-height: 1.7;
+    animation: fadeInUp 0.8s ease 0.4s both;
+}
+
+.hero-cta {
+    display: flex;
+    gap: 16px;
+    animation: fadeInUp 0.8s ease 0.6s both;
+}
+
+.hero-cta a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 18px 36px;
+    font-weight: 700;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary {
+    background: #fff;
+    color: var(--primary);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(255, 255, 255, 0.3);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-3px);
 }
 
 @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(50px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-/* Logo */
-.logo {
-    font-size: 56px;
-    font-weight: 900;
-    margin-bottom: 10px;
-    letter-spacing: -2px;
-    background: linear-gradient(135deg, #fff 0%, #a8d5ff 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-shadow: 0 0 40px rgba(168, 213, 255, 0.3);
+/* SECTIONS */
+section {
+    max-width: 1280px;
+    margin: auto;
+    padding: 100px 24px;
+    position: relative;
 }
 
-/* Badge */
-.badge {
+.section-label {
     display: inline-block;
-    background: rgba(11, 61, 145, 0.3);
-    border: 2px solid rgba(168, 213, 255, 0.3);
-    padding: 8px 20px;
-    border-radius: 30px;
     font-size: 13px;
     font-weight: 700;
-    letter-spacing: 1px;
+    color: var(--primary);
+    letter-spacing: 1.5px;
     text-transform: uppercase;
-    margin-bottom: 30px;
-    animation: badgePulse 3s ease-in-out infinite;
-}
-
-@keyframes badgePulse {
-    0%, 100% { box-shadow: 0 0 20px rgba(168, 213, 255, 0.2); }
-    50% { box-shadow: 0 0 40px rgba(168, 213, 255, 0.4); }
-}
-
-/* Coming Soon Text */
-.coming-soon {
-    font-size: 72px;
-    font-weight: 900;
-    margin: 30px 0;
-    letter-spacing: -3px;
-    background: linear-gradient(45deg, #fff, #a8d5ff, #fff);
-    background-size: 200% 200%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: gradientSlide 4s ease infinite;
-    text-shadow: 0 0 60px rgba(168, 213, 255, 0.5);
-}
-
-@keyframes gradientSlide {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-}
-
-/* Tagline */
-.tagline {
-    font-size: 22px;
-    margin-bottom: 50px;
-    opacity: 0.9;
-    font-weight: 400;
-    letter-spacing: 0.5px;
-}
-
-/* Contact Section */
-.contact-box {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(30px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 16px;
+    padding: 6px 16px;
+    background: rgba(11, 61, 145, 0.08);
     border-radius: 20px;
-    padding: 30px;
-    margin-top: 40px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
-.contact-title {
-    font-size: 18px;
-    margin-bottom: 20px;
-    opacity: 0.8;
-    font-weight: 500;
+h2 {
+    font-size: 48px;
+    color: var(--dark);
+    margin-bottom: 24px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
 }
 
-.contact-links {
+.section-intro {
+    max-width: 800px;
+    margin-bottom: 56px;
+    font-size: 20px;
+    color: #64748b;
+    line-height: 1.8;
+}
+
+/* INFO BADGE */
+.info-badge {
+    background: linear-gradient(135deg, #dbeafe 0%, #e0e7ff 100%);
+    padding: 32px;
+    border-left: 5px solid var(--primary);
+    border-radius: 16px;
+    font-size: 17px;
+    line-height: 2;
+    box-shadow: 0 4px 20px rgba(11, 61, 145, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-badge:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(11, 61, 145, 0.15);
+}
+
+.info-badge strong {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+/* CAPABILITIES GRID */
+.capabilities-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+}
+
+.capability-card {
+    background: #fff;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    position: relative;
+}
+
+.capability-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-2);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.capability-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(11, 61, 145, 0.15);
+    border-color: var(--primary);
+}
+
+.capability-card:hover::before {
+    transform: scaleX(1);
+}
+
+.card-image-wrapper {
+    height: 240px;
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(135deg, #e0e7ff 0%, #dbeafe 100%);
+}
+
+.capability-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    display: block;
+}
+
+.capability-card:hover img {
+    transform: scale(1.1);
+}
+
+.card-content {
+    padding: 32px;
+}
+
+.card-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+    display: inline-block;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.card-content h3 {
+    margin: 0 0 16px;
+    font-size: 26px;
+    color: var(--dark);
+    font-weight: 800;
+}
+
+.card-content p {
+    margin: 0 0 20px;
+    color: #64748b;
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+.card-features {
     display: flex;
-    justify-content: center;
-    gap: 30px;
     flex-wrap: wrap;
+    gap: 10px;
 }
 
-.contact-link {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
+.feature-tag {
+    background: rgba(11, 61, 145, 0.08);
+    color: var(--primary);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
     font-weight: 600;
-    padding: 14px 28px;
-    background: rgba(11, 61, 145, 0.4);
-    border: 1px solid rgba(168, 213, 255, 0.3);
-    border-radius: 50px;
     transition: all 0.3s ease;
 }
 
-.contact-link:hover {
-    background: rgba(11, 61, 145, 0.6);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(11, 61, 145, 0.4);
+.feature-tag:hover {
+    background: var(--primary);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* STATS SECTION */
+.stats-section {
+    background: var(--gradient-2);
+    color: #fff;
+    padding: 80px 24px;
+    margin: 100px 0;
+}
+
+.stats-grid {
+    max-width: 1280px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 48px;
+    text-align: center;
+}
+
+.stat-item {
+    animation: fadeInUp 0.8s ease;
+}
+
+.stat-number {
+    font-size: 56px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    display: block;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.stat-label {
+    font-size: 16px;
+    opacity: 0.9;
+    font-weight: 600;
+}
+
+/* CERTIFICATIONS LIST */
+.cert-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+.cert-item {
+    background: #fff;
+    border-left: 4px solid var(--primary);
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.cert-item::before {
+    content: '✓';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: var(--gradient-2);
+    color: #fff;
+    border-radius: 50%;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.cert-item:hover {
+    transform: translateX(8px);
+    box-shadow: 0 4px 20px rgba(11, 61, 145, 0.15);
+}
+
+/* CAPABILITY STATEMENT DOWNLOAD */
+.download-capability {
+    background: var(--gradient-2);
+    color: #fff;
+    padding: 56px 48px;
+    border-radius: 24px;
+    text-align: center;
+    margin-bottom: 56px;
+    box-shadow: 0 12px 40px rgba(11, 61, 145, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.download-capability::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.download-capability-content {
+    position: relative;
+    z-index: 1;
+}
+
+.download-capability h3 {
+    margin: 0 0 16px;
+    font-size: 32px;
+    font-weight: 800;
+}
+
+.download-capability p {
+    margin: 0 0 32px;
+    font-size: 18px;
+    opacity: 0.95;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: #fff;
+    color: var(--primary);
+    padding: 18px 40px;
+    font-weight: 700;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 17px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.download-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+}
+
+/* CONTACT CARDS */
+.contact-info {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 56px;
+}
+
+.contact-card {
+    background: #fff;
+    border: 2px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 32px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.contact-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(11, 61, 145, 0.12);
+    border-color: var(--primary);
 }
 
 .contact-icon {
-    font-size: 24px;
-    animation: iconBounce 2s ease-in-out infinite;
+    font-size: 40px;
+    min-width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(11, 61, 145, 0.1), rgba(37, 99, 235, 0.1));
+    border-radius: 16px;
 }
 
-@keyframes iconBounce {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
+.contact-details h3 {
+    margin: 0 0 8px;
+    font-size: 12px;
+    color: #94a3b8;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-    .logo { font-size: 38px; }
-    .coming-soon { font-size: 48px; }
-    .tagline { font-size: 18px; }
-    .contact-links { gap: 15px; }
-    .contact-link { 
-        font-size: 16px;
-        padding: 12px 24px;
+.contact-details a {
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.contact-details a:hover {
+    color: var(--accent);
+}
+
+.contact-details p {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+/* CONTACT FORM */
+.form-container {
+    background: var(--light);
+    padding: 48px;
+    border-radius: 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.form-container h3 {
+    margin: 0 0 32px;
+    color: var(--dark);
+    font-size: 28px;
+    font-weight: 800;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 18px 20px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    background: #fff;
+}
+
+form input:focus,
+form textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(11, 61, 145, 0.1);
+    transform: translateY(-2px);
+}
+
+form textarea {
+    resize: vertical;
+    min-height: 140px;
+}
+
+form button {
+    width: 100%;
+    padding: 20px;
+    background: var(--gradient-2);
+    color: #fff;
+    border: none;
+    font-size: 17px;
+    font-weight: 700;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 24px rgba(11, 61, 145, 0.25);
+}
+
+form button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(11, 61, 145, 0.35);
+}
+
+/* FOOTER */
+footer {
+    background: linear-gradient(135deg, #0a0e27 0%, #1a1a2e 100%);
+    color: #fff;
+    padding: 64px 24px 32px;
+    position: relative;
+    overflow: hidden;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+}
+
+.footer-content {
+    max-width: 1280px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section h4 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.footer-contact a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.footer-contact a:hover {
+    color: #fff;
+    transform: translateX(4px);
+}
+
+.footer-bottom {
+    max-width: 1280px;
+    margin: auto;
+    text-align: center;
+    padding-top: 32px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 14px;
+    color: rgba(255,255,255,0.7);
+}
+
+/* RESPONSIVE */
+@media (min-width: 768px) {
+    .capabilities-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
-    .contact-box { padding: 24px; }
+
+    .contact-info {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .cert-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    header {
+        padding: 200px 24px 140px;
+    }
+
+    header h1 {
+        font-size: 72px;
+    }
+
+    .footer-content {
+        grid-template-columns: 2fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 767px) {
+    nav {
+        padding: 12px 0;
+    }
+
+    .nav-inner {
+        padding: 12px 20px;
+    }
+
+    .nav-links {
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    header {
+        padding: 140px 20px 80px;
+    }
+
+    header h1 {
+        font-size: 36px;
+    }
+
+    header p {
+        font-size: 18px;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+    .hero-cta {
+        flex-direction: column;
+    }
+
+    .form-container {
+        padding: 32px 24px;
+    }
+
+    .download-capability {
+        padding: 40px 24px;
+    }
+}
+
+/* SCROLL REVEAL ANIMATION */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
 }
 </style>
 </head>
 
 <body>
 
-<div class="grid-background"></div>
-
-<div class="orb orb1"></div>
-<div class="orb orb2"></div>
-<div class="orb orb3"></div>
-
-<div class="particles">
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-</div>
-
-<div class="container">
-    <div class="logo">Groupe Fonga LLC</div>
-    
-    <div class="coming-soon">Coming Soon</div>
-    
-    <p class="tagline">Professional services for US Government agencies</p>
-    
-    <div class="contact-box">
-        <div class="contact-title">Get in Touch</div>
-        <div class="contact-links">
-            <a href="mailto:info@groupefonga.com" class="contact-link">
-                <span class="contact-icon">📧</span>
-                <span>Email Us</span>
-            </a>
-            <a href="tel:+15127615585" class="contact-link">
-                <span class="contact-icon">📞</span>
-                <span>Call Us</span>
-            </a>
+<nav id="navbar">
+    <div class="nav-inner">
+        <div class="nav-logo-container">
+            <div class="logo-icon">
+                <div class="eagle-shield">
+                    <div class="shield-bg"></div>
+                    <div class="shield-blue"></div>
+                    <div class="stars-container">
+                        <div class="mini-stars">★ ★ ★</div>
+                    </div>
+                    <span class="eagle-symbol">🦅</span>
+                </div>
+            </div>
+            <div class="nav-logo">Groupe Fonga LLC</div>
+        </div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#capabilities">Capabilities</a>
+            <a href="#certifications">Certifications</a>
+            <a href="#teaming">Teaming</a>
+            <a href="#contact">Contact</a>
         </div>
     </div>
-</div>
+</nav>
 
-</body>
-</html>
+<header>
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-particles" id="particles"></div>
+    <div class="header-inner">
+        <div class="header-badge">
+            🏆 SBA 8(a) Certified Business
+        </div>
+        <h1>Groupe Fonga LLC</h1>
+        <p>
+            Delivering mission-critical consulting, cutting-edge IT & AI solutions, 
+            and comprehensive logistics support to government agencies nationwide.
+        </p>
+        <div class="hero-cta">
+            <a href="#contact" class="btn-primary">Get Started →</a>
+            <a href="#capabilities" class="btn-secondary">Our Capabilities</a>
+        </div>
+    </div>
+</header>
 
+<section id="about">
+    <div class="section-label">About Us</div>
+    <h2>Trusted Government Partner</h2>
+    <p class="section-intro">
+        Groupe Fonga LLC is a SAM-registered, SBA 8(a) certified small business 
+        providing mission-focused professional services to federal, state, 
+        and local government agencies. As a certified minority-owned business, we bring 
+        specialized expertise in high-demand areas including IT modernization, strategic 
+        program management, and logistics operations.
+    </p>
+    <div class="info-badge">
+        <strong>SBA 8(a) Program:</strong> Active Participant<br>
+        <strong>Minority-Owned:</strong> Certified Business Enterprise<br>
+        <strong>CAGE Code:</strong> 17TE5<br>
+        <strong>Headquarters:</strong> Austin, Texas
+    </div>
+</section>
 
+<section id="capabilities">
+    <div class="section-label">What We Do</div>
+    <h2>Core Capabilities</h2>
+    <p class="section-intro">
+        Our service offerings align with high-priority government procurement categories 
+        and meet critical agency needs. We specialize in delivering solutions that drive 
+        operational excellence across federal, state, and local agencies.
+    </p>
 
+    <div class="capabilities-grid">
+        <div class="capability-card reveal">
+            <div class="card-image-wrapper">
+                <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80" alt="Consulting" loading="eager">
+            </div>
+            <div class="card-content">
+                <div class="card-icon">📊</div>
+                <h3>Strategic Consulting & Program Management</h3>
+                <p>Comprehensive professional services and consulting support that optimize government operations. We deliver program management office (PMO) operations, business process optimization, performance measurement frameworks aligned with federal and state requirements, and policy development. Our consultants provide change management, stakeholder engagement, grant administration, compliance monitoring, and strategic planning support that drives measurable outcomes for agencies at all levels.</p>
+                <div class="card-features">
+                    <span class="feature-tag">Professional Services</span>
+                    <span class="feature-tag">Program Management Office</span>
+                    <span class="feature-tag">Business Process Optimization</span>
+                    <span class="feature-tag">Strategic Planning</span>
+                    <span class="feature-tag">Grant Management</span>
+                    <span class="feature-tag">Compliance & Policy</span>
+                </div>
+            </div>
+        </div>
 
+        <div class="capability-card reveal">
+            <div class="card-image-wrapper">
+                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80" alt="IT and AI" loading="eager">
+            </div>
+            <div class="card-content">
+                <div class="card-icon">🤖</div>
+                <h3>IT & Artificial Intelligence</h3>
+                <p>Advanced technology solutions leveraging government cooperative contracts for IT products and services. We implement secure cloud migrations, AI/ML systems for predictive analytics, cybersecurity frameworks compliant with NIST and FedRAMP standards, and custom software development. Our services include digital transformation roadmaps, legacy system modernization, data architecture, hardware/software procurement, managed services, and technology training to enhance operational efficiency and citizen services.</p>
+                <div class="card-features">
+                    <span class="feature-tag">Cooperative Contracts</span>
+                    <span class="feature-tag">AI/ML Implementation</span>
+                    <span class="feature-tag">Cloud Migration (AWS/Azure)</span>
+                    <span class="feature-tag">Cybersecurity & Compliance</span>
+                    <span class="feature-tag">Software Development</span>
+                    <span class="feature-tag">Managed IT Services</span>
+                </div>
+            </div>
+        </div>
 
-
-
+        <div class="capability-card reveal">
+            <div class="card-image-wrapper">
+                <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80" alt="Logistics" loading="eager">
+            </div>
+            <div class="card-content">
+                <div class="card-icon">🚚</div>
+                <h3>Logistics & Supply Chain Operations</h3>
+                <p>Mission-critical logistics solutions supporting infrastructure needs and emergency response operations. We provide transportation management, inventory optimization, distribution network design, and procurement support with specialized expertise in disaster response and recovery logistics. Our services include warehouse management systems, fleet optimization, vendor management, last-mile delivery coordination, and compliance with federal transportation regulations to ensure resilient supply chains during both routine operations and crisis situations.</p>
+                <div class="card-features">
+                    <span class="feature-tag">Emergency Response Logistics</span>
+                    <span class="feature-tag">Supply Chain Management</span>
+                    <span class="feature-tag">Transportation Planning</span>
+                    <span class="feature-tag">Distribution Operations</span>
+                    <span class="feature-tag">Disaster Recovery Support</span>
+                    <span class="feature-tag">Infrastructure Logistics</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
