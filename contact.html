@@ -161,28 +161,30 @@ footer{border-top:1px solid var(--line);padding:32px 40px;display:flex;align-ite
 
     <div class="form-card fade-up">
       <h3 style="font-family:'Instrument Serif',serif;font-size:22px;color:var(--ink);margin-bottom:24px;">Send us a message</h3>
-      <form id="contactForm" onsubmit="handleSubmit(event)">
+      <form id="contactForm" action="https://formspree.io/f/mqezojav" method="POST">
+        <input type="hidden" name="_replyto" value="info@groupefonga.com"/>
+        <input type="hidden" name="_subject" value="New inquiry from groupefonga.com"/>
         <div class="form-row">
           <div class="form-group">
             <label class="form-label">First name</label>
-            <input class="form-input" type="text" placeholder="Geoffrey" required/>
+            <input class="form-input" type="text" name="first_name" placeholder="Geoffrey" required/>
           </div>
           <div class="form-group">
             <label class="form-label">Last name</label>
-            <input class="form-input" type="text" placeholder="Fonga" required/>
+            <input class="form-input" type="text" name="last_name" placeholder="Fonga" required/>
           </div>
         </div>
         <div class="form-group">
           <label class="form-label">Email</label>
-          <input class="form-input" type="email" placeholder="you@organization.gov" required/>
+          <input class="form-input" type="email" name="email" placeholder="you@organization.gov" required/>
         </div>
         <div class="form-group">
           <label class="form-label">Organization</label>
-          <input class="form-input" type="text" placeholder="Agency or company name"/>
+          <input class="form-input" type="text" name="organization" placeholder="Agency or company name"/>
         </div>
         <div class="form-group">
           <label class="form-label">How can we help?</label>
-          <select class="form-select">
+          <select class="form-select" name="service_area">
             <option value="">Select a service area</option>
             <option>AI Strategy & Governance</option>
             <option>Management Consulting</option>
@@ -199,7 +201,7 @@ footer{border-top:1px solid var(--line);padding:32px 40px;display:flex;align-ite
         </div>
         <div class="form-group">
           <label class="form-label">Message</label>
-          <textarea class="form-textarea" placeholder="Tell us about your project, timeline, and any specific requirements..." required></textarea>
+          <textarea class="form-textarea" name="message" placeholder="Tell us about your project, timeline, and any specific requirements..." required></textarea>
         </div>
         <button type="submit" class="form-submit">Send message →</button>
         <p class="form-note">We respond within one business day. Your information is never shared.</p>
@@ -210,20 +212,7 @@ footer{border-top:1px solid var(--line);padding:32px 40px;display:flex;align-ite
     </div>
   </div>
 </main>
-<script>
-function handleSubmit(e){
-  e.preventDefault();
-  const form=document.getElementById('contactForm');
-  const msg=document.getElementById('successMsg');
-  // Encode form data for mailto
-  const data=new FormData(form);
-  const subject=encodeURIComponent('Groupe Fonga LLC — Website Inquiry');
-  const body=encodeURIComponent('New inquiry from groupefonga.com\n\n'+Array.from(form.elements).filter(el=>el.value&&el.type!=='submit').map(el=>el.placeholder+': '+el.value).join('\n'));
-  window.location.href='mailto:info@groupefonga.com?subject='+subject+'&body='+body;
-  form.style.display='none';
-  msg.style.display='block';
-}
-</script>
+
 
 <div class="glow-divider"></div>
 <footer>
