@@ -100,7 +100,7 @@ footer{border-top:1px solid var(--line);padding:32px 40px;display:flex;align-ite
 .naics-primary{color:var(--lime);font-weight:600;font-family:'JetBrains Mono',monospace;font-size:11px;}
 .naics-code{font-family:'JetBrains Mono',monospace;font-weight:600;color:var(--ink);}
 
-.hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;
+.hamburger{display:none !important;flex-direction:column;justify-content:center;gap:5px;
   width:40px;height:40px;background:none;border:1px solid rgba(255,255,255,0.15);
   border-radius:6px;cursor:pointer;padding:8px;margin-left:8px;flex-shrink:0;}
 .hamburger span{display:block;height:2px;background:#EDF1F5;border-radius:2px;
@@ -125,6 +125,89 @@ footer{border-top:1px solid var(--line);padding:32px 40px;display:flex;align-ite
 @media(max-width:900px){
   .nav-links,.nav-cta{display:none !important;}
   .hamburger{display:flex;}
+}
+
+
+/* ── MOBILE OVERRIDES ──────────────────────────────────────────────────────── */
+@media(max-width:768px){
+  /* Nav */
+  nav{padding:0 16px;height:56px;}
+  .nav-logo img{height:38px;width:38px;}
+  .nav-logo span{font-size:11px;letter-spacing:1px;}
+  .nav-links,.nav-cta{display:none !important;}
+  .hamburger{display:flex !important;}
+
+  /* Mobile menu full-screen feel */
+  .mobile-menu{top:56px;padding:8px 0 20px;}
+  .mobile-menu a{font-size:17px;padding:16px 24px;border-bottom:1px solid rgba(30,44,56,0.4);}
+  .mobile-cta{margin:12px 24px 0;padding:16px;border-radius:8px;text-align:center;}
+
+  /* Page hero */
+  .page-hero{padding:48px 20px 36px;}
+  .page-title{font-size:32px !important;}
+  .page-sub{font-size:15px !important;}
+
+  /* Main content */
+  main{padding:32px 16px 60px;}
+
+  /* Cards */
+  .card-grid-3,.card-grid-2{grid-template-columns:1fr !important;gap:14px;}
+  .card{padding:24px;}
+  .card-title{font-size:18px;}
+
+  /* Buttons */
+  .btn-primary,.btn-secondary{padding:13px 24px;font-size:14px;width:100%;text-align:center;justify-content:center;}
+  .actions{flex-direction:column;width:100%;}
+
+  /* Stats */
+  .stats-grid{grid-template-columns:1fr 1fr !important;gap:1px;}
+  .stat-card{padding:28px 16px;}
+  .stat-num{font-size:38px !important;}
+
+  /* Cred bar */
+  .cred-bar{flex-direction:column;gap:16px;padding:20px 16px;text-align:center;}
+  .cred-divider{display:none;}
+
+  /* Preview grid */
+  .preview-grid{grid-template-columns:1fr !important;}
+  .previews{padding:0 16px 48px !important;}
+
+  /* Hero */
+  .hero{padding:48px 20px 60px;}
+  .hero-h1{font-size:38px !important;}
+  .hero-sub{font-size:16px !important;}
+  .hero-actions{flex-direction:column;width:100%;}
+
+  /* Outcomes */
+  .outcome-card{padding:24px;}
+  .outcome-metric{font-size:28px;}
+
+  /* Contact */
+  .contact-grid{grid-template-columns:1fr !important;gap:24px;}
+  .form-row{grid-template-columns:1fr !important;}
+  .form-card{padding:24px;}
+
+  /* About pillars */
+  [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr !important;}
+
+  /* Footer */
+  footer{flex-direction:column;align-items:flex-start;padding:20px 16px;gap:12px;}
+  .footer-reg{flex-wrap:wrap;gap:10px;}
+
+  /* Cert cards */
+  .cert-card{padding:18px;}
+  .reg-strip{flex-direction:column;align-items:flex-start;gap:16px;padding:20px;}
+
+  /* Tables */
+  .naics-table{font-size:12px;}
+  .naics-table td,.naics-table th{padding:8px 8px;}
+}
+
+@media(max-width:400px){
+  .hero-h1{font-size:32px !important;}
+  .page-title{font-size:28px !important;}
+  .stat-num{font-size:32px !important;}
+  .nav-logo span{display:none;}
 }
 
 </style>
