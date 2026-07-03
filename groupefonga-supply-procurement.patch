@@ -1,0 +1,47 @@
+diff --git a/capabilities.html b/capabilities.html
+index e26dc6c..7ec62af 100644
+--- a/capabilities.html
++++ b/capabilities.html
+@@ -145,7 +145,7 @@ footer{border-top:1px solid #1E2C38;padding:28px 24px;display:flex;align-items:c
+ <div class="page-hero">
+   <div class="page-eyebrow">What we do</div>
+   <h1 class="page-title">Full-spectrum expertise.<br><em>Senior delivery.</em></h1>
+-  <p class="page-sub">Nine practice areas. Every engagement led by a senior principal — not delegated to junior staff.</p>
++  <p class="page-sub">Ten practice areas. Every engagement led by a senior principal — not delegated to junior staff.</p>
+ </div>
+ <div class="glow-divider"></div>
+ <main>
+@@ -159,6 +159,7 @@ footer{border-top:1px solid #1E2C38;padding:28px 24px;display:flex;align-items:c
+     <div class="card fade-up"><div class="card-icon">📊</div><h3 class="card-title">Data Analytics & Business Intelligence</h3><p class="card-desc">Advanced analytics strategy, data architecture, BI platform evaluation, and predictive analytics. From data strategy to models that drive real business decisions.</p><div class="card-tags"><span class="tag">NAICS 541690</span><span class="tag">NAICS 518210</span><span class="tag">Analytics</span><span class="tag">NIGP 920-43</span></div></div>
+     <div class="card fade-up"><div class="card-icon">💻</div><h3 class="card-title">Website & Digital Presence</h3><p class="card-desc">Modern, AI-native website design and digital presence strategy. Clean, fast, mobile-first websites with embedded AI capabilities — reflecting your brand and attracting the right clients.</p><div class="card-tags"><span class="tag">NAICS 541511</span><span class="tag">NAICS 541519</span><span class="tag">Web Design</span><span class="tag">NIGP 920-14</span></div></div>
+     <div class="card fade-up"><div class="card-icon">🎓</div><h3 class="card-title">Training & Workforce Development</h3><p class="card-desc">Executive AI workshops, data literacy programs, and enterprise enablement. Bilingual delivery in English and French. For government workforces and corporate teams.</p><div class="card-tags"><span class="tag">NAICS 611430</span><span class="tag">NAICS 611420</span><span class="tag">Bilingual</span><span class="tag">NIGP 924-78</span></div></div>
++    <div class="card fade-up"><div class="card-icon">📦</div><h3 class="card-title">Supply & Goods Procurement</h3><p class="card-desc">Industrial and institutional supply sourcing — bulk bags, packaging, and material goods. Competitive bid response for municipal and state goods solicitations, vendor sourcing, and FOB delivery coordination.</p><div class="card-tags"><span class="tag">NAICS 424130</span><span class="tag">NAICS 424120</span><span class="tag">Bulk Supply</span></div></div>
+   </div>
+   <div style="text-align:center;margin-top:48px;display:flex;gap:14px;flex-wrap:wrap;justify-content:center;" class="fade-up">
+     <a href="contact.html" class="btn-primary">Start a conversation →</a>
+diff --git a/certifications.html b/certifications.html
+index 73bbfc9..ae914cc 100644
+--- a/certifications.html
++++ b/certifications.html
+@@ -201,6 +201,8 @@ footer{border-top:1px solid #1E2C38;padding:28px 24px;display:flex;align-items:c
+       <tr><td></td><td><span class="naics-code">611430</span></td><td>Professional and Management Development Training</td></tr>
+       <tr><td></td><td><span class="naics-code">611420</span></td><td>Computer Training</td></tr>
+       <tr><td></td><td><span class="naics-code">541513</span></td><td>Computer Facilities Management Services</td></tr>
++      <tr><td></td><td><span class="naics-code">424130</span></td><td>Industrial and Personal Service Paper Merchant Wholesalers — Packaging &amp; Bulk Supply</td></tr>
++      <tr><td></td><td><span class="naics-code">424120</span></td><td>Stationery and Office Supplies Merchant Wholesalers — Packaging &amp; Bulk Supply</td></tr>
+     </table>
+   </div>
+   <div class="fade-up" style="background:rgba(62,207,184,0.05);border:1px solid rgba(62,207,184,0.2);border-radius:12px;padding:24px 28px;">
+diff --git a/index.html b/index.html
+index 9d6f6a1..065eb65 100644
+--- a/index.html
++++ b/index.html
+@@ -243,7 +243,7 @@ footer{border-top:1px solid #1E2C38;padding:28px 24px;display:flex;align-items:c
+ <div class="previews">
+   <h2 class="previews-title fade-up">Everything you need.<br><em>In one firm.</em></h2>
+   <div class="preview-grid">
+-    <div class="preview-card fade-up"><div class="preview-icon">🧠</div><div class="preview-title">Capabilities</div><div class="preview-desc">Nine practice areas — AI strategy, management consulting, project management, financial analytics, digital transformation, and more.</div><a href="capabilities.html" class="preview-link">Explore capabilities →</a></div>
++    <div class="preview-card fade-up"><div class="preview-icon">🧠</div><div class="preview-title">Capabilities</div><div class="preview-desc">Ten practice areas — AI strategy, management consulting, project management, financial analytics, digital transformation, supply & goods procurement, and more.</div><a href="capabilities.html" class="preview-link">Explore capabilities →</a></div>
+     <div class="preview-card fade-up"><div class="preview-icon">📊</div><div class="preview-title">Past Performance</div><div class="preview-desc">$1B+ capital markets modernization. $20M+ in regulatory costs averted. 20% fraud detection improvement. Real outcomes.</div><a href="outcomes.html" class="preview-link">View outcomes →</a></div>
+     <div class="preview-card fade-up"><div class="preview-icon">🏛️</div><div class="preview-title">Certifications</div><div class="preview-desc">SAM.gov active. Texas CMBL. MBE. HUB eligible. IBM GenAI, AWS, Azure, CSM, SAS 9, FinOps certified. Ready to contract today.</div><a href="certifications.html" class="preview-link">View certifications →</a></div>
+     <div class="preview-card fade-up"><div class="preview-icon">💡</div><div class="preview-title">Why Groupe Fonga</div><div class="preview-desc">Fortune 500 rigor. AI depth built through hands-on delivery. Senior principal on every engagement — no junior hand-offs.</div><a href="about.html" class="preview-link">Learn more →</a></div>
